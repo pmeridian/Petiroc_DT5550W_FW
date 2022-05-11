@@ -1,0 +1,49 @@
+#define SCI_REG_ALL_FIFO_RESET 0xFFFFF908
+#define SCI_REG_c_tot 0x00000102
+#define SCI_REG_run_time_lsb 0x00000101
+#define SCI_REG_run_time_msb 0x00000100
+#define SCI_REG_run_start 0x00000000
+#define SCI_REG_sw_trig_freq 0x00000003
+#define SCI_REG_tr_sel 0x00000001
+#define SCI_REG_e16 0x00000106
+#define SCI_REG_evt_ts_msb 0x00000104
+#define SCI_REG_evt_ts_lsb 0x00000105
+#define SCI_REG_e15 0x00000107
+#define SCI_REG_tr_en 0x00000002
+#define SCI_REG_fw_ver 0x00000400
+#define SCI_REG_dv_tot 0x00000103
+#define SCI_REG_rej_delay 0x00000051
+#define SCI_REG_rej_en 0x00000050
+#define SCI_REG_tot16 0x00000108
+#define SCI_REG_PetirocCfg0_REG_CFG0 0x2001
+#define SCI_REG_PetirocCfg0_REG_CFG1 0x2002
+#define SCI_REG_PetirocCfg0_REG_CFG2 0x2003
+#define SCI_REG_PetirocCfg0_REG_CFG3 0x2004
+#define SCI_REG_PetirocCfg0_REG_CFG4 0x2005
+#define SCI_REG_PetirocCfg0_REG_CFG5 0x2006
+#define SCI_REG_PetirocCfg0_REG_CFG6 0x2007
+#define SCI_REG_PetirocCfg0_REG_CFG7 0x2008
+#define SCI_REG_PetirocCfg0_REG_CFG8 0x2009
+#define SCI_REG_PetirocCfg0_REG_CFG9 0x200A
+#define SCI_REG_PetirocCfg0_REG_CFG10 0x200B
+#define SCI_REG_PetirocCfg0_REG_CFG11 0x200C
+#define SCI_REG_PetirocCfg0_REG_CFG12 0x200D
+#define SCI_REG_PetirocCfg0_REG_CFG13 0x200E
+#define SCI_REG_PetirocCfg0_REG_CFG14 0x200F
+#define SCI_REG_PetirocCfg0_REG_CFG15 0x2010
+#define SCI_REG_PetirocCfg0_REG_CFG16 0x2011
+#define SCI_REG_PetirocCfg0_REG_CFG17 0x2012
+#define SCI_REG_PetirocCfg0_REG_CFG18 0x2013
+#define SCI_REG_PetirocCfg0_REG_CFG19 0x2014
+#define SCI_REG_PetirocCfg0_START_REG_CFG 0x2015
+
+#define SCI_REG_i2chv_CTRL 0x1001
+#define SCI_REG_i2chv_MON 0x1002
+
+#define SCI_REG_RateMeter_0_FIFOADDRESS 0x5000
+
+#define SCI_REG_CP_0_FIFOADDRESS 0x3000
+#define SCI_REG_CP_0_READ_STATUS 0x3001
+#define SCI_REG_CP_0_READ_VALID_WORDS 0x3002
+#define SCI_REG_CP_0_CONFIG 0x3003
+
