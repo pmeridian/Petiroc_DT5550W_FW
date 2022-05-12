@@ -112,12 +112,12 @@ PORT(
     PORT_OUT: OUT STD_LOGIC_VECTOR(0 DOWNTO 0)); 
 END COMPONENT;
 signal U10_out : std_logic_vector(0 downto 0) := (others => '0');
-signal U11_CONST : INTEGER := 0;
-signal U13_TS_IN : std_logic_vector(63 downto 0);
-signal U16_OUT : STD_LOGIC_VECTOR (63 DOWNTO 0);
-signal U18_out : std_logic_vector(0 downto 0) := (others => '0');
-signal U19_out_0 : std_logic_vector(31 downto 0) := (others => '0');
-signal U20_CONST : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
+signal U12_TS_IN : std_logic_vector(63 downto 0);
+signal U15_OUT : STD_LOGIC_VECTOR (63 DOWNTO 0);
+signal U17_out : std_logic_vector(0 downto 0) := (others => '0');
+signal U18_out_0 : std_logic_vector(31 downto 0) := (others => '0');
+signal U19_CONST : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
+signal U20_CONST : INTEGER := 0;
 
 begin
 U0 : CHRONO_STARTSTOP
@@ -126,7 +126,7 @@ U0 : CHRONO_STARTSTOP
         RESET =>  U2_out, 
         CE => "1",
         CLK => async_clk,
-        START => U18_out,
+        START => U17_out,
         STOP => U1_out,
         TIMEMES => U0_time,
         AUTORESET => "0",
@@ -165,7 +165,7 @@ PORT MAP(
 	reset_val => "00000000000000000000000000000000",
 	b => U4_OUT );
 U5_IN_SIGNAL <= IN_SIGNAL;
-TOT_LATCHED <= U19_out_0;
+TOT_LATCHED <= U18_out_0;
 U8_CONST <= 2;
 
 U9:SYNC_FIX_DELAY
@@ -186,27 +186,26 @@ PORT MAP(
     RESET => GlobalReset,
     CLK => async_clk,
     PORT_IN => U1_out,
-    DELAY => U11_CONST,
+    DELAY => U20_CONST,
     GATE => 1,
     PORT_OUT => U10_out
 );
-U11_CONST <= 10;
 D_READY <= U10_out;
-U13_TS_IN <= TS_IN;
-U16 : d_latch
+U12_TS_IN <= TS_IN;
+U15 : d_latch
   Generic map(
 	IN_SIZE => 	64,
 	EDGE => 	"rising")
 PORT MAP(
-	a => U13_TS_IN,
+	a => U12_TS_IN,
 	CE => U2_out(0),
 	clk => GlobalClock(0),
 	reset => '0',
 	reset_val => "0000000000000000000000000000000000000000000000000000000000000000",
-	b => U16_OUT );
-TS_OUT <= U16_OUT;
+	b => U15_OUT );
+TS_OUT <= U15_OUT;
 
-U18:SYNC_FIX_DELAY
+U17:SYNC_FIX_DELAY
 GENERIC MAP(
     maxDelay => 1,
     busWidth => 1)
@@ -214,9 +213,10 @@ PORT MAP(
     RESET => GlobalReset,
     CLK => async_clk,
     PORT_IN => U2_out,
-    PORT_OUT => U18_out
+    PORT_OUT => U17_out
 );
-U19_out_0 <= ext(U4_OUT, 32) + ext(U20_CONST, 32) ;
-U20_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'(x"1"),32));
+U18_out_0 <= ext(U4_OUT, 32) + ext(U19_CONST, 32) ;
+U19_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'(x"1"),32));
+U20_CONST <= 5;
 
 end Behavioral;

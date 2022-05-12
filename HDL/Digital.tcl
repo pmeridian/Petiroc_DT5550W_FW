@@ -72,8 +72,10 @@ add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/spi_timing_modul
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/spi_timing_module.vhd
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/TimestampGenerator.vhd
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/TimestampGenerator.vhd
-add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/U86_custompacket.vhd
-add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/U86_custompacket.vhd
+add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/U85_custompacket.vhd
+add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/U85_custompacket.vhd
+add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/U89_UserHDL_MULTIPLEX_64.vhd
+add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/U89_UserHDL_MULTIPLEX_64.vhd
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/xlx_soft_gd.vhd
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/xlx_soft_gd.vhd
 add_files -force -fileset constrs_1 C:/Users/pccmsdaq02/Petiroc/Digital/HDL/dt555w_constraints.xdc

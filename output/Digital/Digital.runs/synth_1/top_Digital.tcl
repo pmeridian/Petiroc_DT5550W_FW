@@ -63,7 +63,8 @@ read_vhdl -library xil_defaultlib {
   C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/spi93lc56_16bit.vhd
   C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/spi_timing_module.vhd
   C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/TimestampGenerator.vhd
-  C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/U86_custompacket.vhd
+  C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/U85_custompacket.vhd
+  C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/U89_UserHDL_MULTIPLEX_64.vhd
   C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/xlx_soft_gd.vhd
 }
 read_ip -quiet C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci

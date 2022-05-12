@@ -1064,9 +1064,8 @@ signal U41_OUT : STD_LOGIC_VECTOR (0 DOWNTO 0);
 signal U42_run_start : std_logic_vector (0 downto 0); 
 signal U43_CONST : INTEGER := 0;
 signal U44_hold : std_logic_vector(31 downto 0);
-signal U45_CONST : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
-signal U46_TRIG16 : STD_LOGIC_VECTOR (0 DOWNTO 0);
-signal U46_OR_TIME : STD_LOGIC_VECTOR (0 DOWNTO 0);
+signal U45_TRIG16 : STD_LOGIC_VECTOR (0 DOWNTO 0);
+signal U45_OR_TIME : STD_LOGIC_VECTOR (0 DOWNTO 0);
 COMPONENT PetirocSlowControl
   GENERIC( 
 	CfgDefault : STD_LOGIC_VECTOR(639 downto 0) := "0000000000000000000000000000000000000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000000000000000000000000000000000000000000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000011100000110000010101110110011110000101011111111111111111010111111111001111111111111001001";
@@ -1109,8 +1108,8 @@ PORT(
 	REG_CFG19 : in STD_LOGIC_VECTOR(31 downto 0);
 	START_REG_CFG : in STD_LOGIC_VECTOR(31 downto 0) );
 END COMPONENT;
-signal U49_TIME_LSB : std_logic_vector(31 downto 0);
-signal U49_TIME_MSB : std_logic_vector(31 downto 0);
+signal U48_TIME_LSB : std_logic_vector(31 downto 0);
+signal U48_TIME_MSB : std_logic_vector(31 downto 0);
 
 COMPONENT SUBPAGE_Timer64
 PORT(
@@ -1136,8 +1135,8 @@ PORT(
     GlobalClock: in std_logic_vector (0 downto 0); 
     async_clk: IN STD_LOGIC_VECTOR(0 DOWNTO 0)); 
 END COMPONENT;
-signal U50_counts : std_logic_vector(31 downto 0) := (others => '0');
-signal U51_hold : std_logic_vector(31 downto 0);
+signal U49_counts : std_logic_vector(31 downto 0) := (others => '0');
+signal U50_hold : std_logic_vector(31 downto 0);
 signal REG_i2chv_MON_RD : STD_LOGIC_VECTOR (31 DOWNTO 0);
 COMPONENT i2cmaster
   GENERIC( 
@@ -1152,14 +1151,14 @@ PORT(
 	sys_clk : in STD_LOGIC;
 	sys_rst : in STD_LOGIC );
 END COMPONENT;
-signal U54_trg_dv : std_logic_vector (0 downto 0); 
+signal U53_trg_dv : std_logic_vector (0 downto 0); 
 signal variable_analogue_busy : std_logic_vector (0 downto 0); 
-signal U56_BUSY : STD_LOGIC_VECTOR(0 downto 0) := "0";
-signal U56_P_E_15 : STD_LOGIC_VECTOR (15 DOWNTO 0);
-signal U56_P_E_16 : STD_LOGIC_VECTOR (15 DOWNTO 0);
-signal U56_P_H_16 : STD_LOGIC_VECTOR(0 downto 0) := "0";
-signal U56_P_DV : STD_LOGIC_VECTOR(0 downto 0) := "0";
-signal U56_TS_OUT : STD_LOGIC_VECTOR (63 DOWNTO 0);
+signal U55_BUSY : STD_LOGIC_VECTOR(0 downto 0) := "0";
+signal U55_P_E_15 : STD_LOGIC_VECTOR (15 DOWNTO 0);
+signal U55_P_E_16 : STD_LOGIC_VECTOR (15 DOWNTO 0);
+signal U55_P_H_16 : STD_LOGIC_VECTOR(0 downto 0) := "0";
+signal U55_P_DV : STD_LOGIC_VECTOR(0 downto 0) := "0";
+signal U55_TS_OUT : STD_LOGIC_VECTOR (63 DOWNTO 0);
 COMPONENT PetirocAnalogReadout
   GENERIC( 
 	CLKDIV : INTEGER := 40 );
@@ -1252,11 +1251,11 @@ PORT(
 	clk : in STD_LOGIC;
 	reset : in STD_LOGIC );
 END COMPONENT;
-signal U57_OUT : STD_LOGIC_VECTOR (0 DOWNTO 0);
-signal U58_out : std_logic_vector(0 downto 0) := (others => '0');
-signal U59_out_0 : integer;
-signal U60_CONST : INTEGER := 0;
-signal U61_out_0 : std_logic_vector(0 downto 0);
+signal U56_OUT : STD_LOGIC_VECTOR (0 DOWNTO 0);
+signal U57_out : std_logic_vector(0 downto 0) := (others => '0');
+signal U58_out_0 : integer;
+signal U59_CONST : INTEGER := 0;
+signal U60_out_0 : std_logic_vector(0 downto 0);
 signal BUS_RateMeter_0_READ_DATA : STD_LOGIC_VECTOR (31 DOWNTO 0);
 signal BUS_RateMeter_0_VLD : STD_LOGIC_VECTOR (0 DOWNTO 0);
 COMPONENT MCRateMeter
@@ -1274,8 +1273,8 @@ PORT(
 	READ_DATAVALID : out STD_LOGIC_VECTOR(0 downto 0) );
 END COMPONENT;
 signal variable_tr_16 : std_logic_vector (0 downto 0); 
-signal U65_hold : std_logic_vector(31 downto 0);
-signal U66_trg_start : std_logic_vector (0 downto 0); 
+signal U64_hold : std_logic_vector(31 downto 0);
+signal U65_trg_start : std_logic_vector (0 downto 0); 
 Component EDGE_DETECTOR_FE Is
    Generic(bitSize : Integer := 1);
    port(        Reset :  IN STD_LOGIC_VECTOR (0 DOWNTO 0);
@@ -1286,31 +1285,31 @@ Component EDGE_DETECTOR_FE Is
         PORT_OUT: OUT STD_LOGIC_VECTOR(bitSize - 1 DOWNTO 0)
         );
 End component;
-signal U67_out : std_logic_vector(0 downto 0) := (others => '0');
-signal U68_tot_16 : std_logic_vector (31 downto 0); 
-signal U69_out : std_logic_vector(15 downto 0) := (others => '0');
-signal U70_run_start : std_logic_vector (0 downto 0); 
+signal U66_out : std_logic_vector(0 downto 0) := (others => '0');
+signal U67_tot_16 : std_logic_vector (31 downto 0); 
+signal U68_out : std_logic_vector(15 downto 0) := (others => '0');
+signal U69_run_start : std_logic_vector (0 downto 0); 
 signal variable_tot_16 : std_logic_vector (31 downto 0); 
-signal U72_tr_16 : std_logic_vector (0 downto 0); 
+signal U71_tr_16 : std_logic_vector (0 downto 0); 
 signal variable_tr16_ts : std_logic_vector (63 downto 0); 
 signal variable_rej_en : std_logic_vector (0 downto 0); 
-signal U75_rej_en : std_logic_vector (0 downto 0); 
-signal U76_tr16_ts : std_logic_vector (63 downto 0); 
-signal U77_out : std_logic_vector(0 downto 0);
+signal U74_rej_en : std_logic_vector (0 downto 0); 
+signal U75_tr16_ts : std_logic_vector (63 downto 0); 
+signal U76_out : std_logic_vector(0 downto 0);
 signal variable_tot_dv : std_logic_vector (0 downto 0); 
-signal U79_trg_dv : std_logic_vector (0 downto 0); 
-signal U80_trg_busy : std_logic_vector (0 downto 0); 
+signal U78_trg_dv : std_logic_vector (0 downto 0); 
+signal U79_trg_busy : std_logic_vector (0 downto 0); 
 signal variable_rej_sig : std_logic_vector (0 downto 0); 
-signal U82_rej_sig : std_logic_vector (0 downto 0); 
+signal U81_rej_sig : std_logic_vector (0 downto 0); 
 signal variable_cp_busy : std_logic_vector (0 downto 0); 
 signal variable_cp_full : std_logic_vector (0 downto 0); 
-signal U86_BUSY : STD_LOGIC_VECTOR (0 DOWNTO 0);
-signal U86_FIFO_FULL : STD_LOGIC_VECTOR (0 DOWNTO 0);
+signal U85_BUSY : STD_LOGIC_VECTOR (0 DOWNTO 0);
+signal U85_FIFO_FULL : STD_LOGIC_VECTOR (0 DOWNTO 0);
 signal BUS_CP_0_READ_DATA : STD_LOGIC_VECTOR (31 DOWNTO 0);
 signal BUS_CP_0_VLD : STD_LOGIC_VECTOR (0 DOWNTO 0);
 signal REG_CP_0_READ_STATUS_RD : STD_LOGIC_VECTOR (31 DOWNTO 0);
 signal REG_CP_0_READ_VALID_WORDS_RD : STD_LOGIC_VECTOR (31 DOWNTO 0);
-COMPONENT U86_custompacket
+COMPONENT U85_custompacket
   GENERIC( 
 	memLength : INTEGER := 1024;
 	wordWidth : INTEGER := 32 );
@@ -1337,9 +1336,9 @@ PORT(
 	READ_VALID_WORDS : out STD_LOGIC_VECTOR(31 downto 0);
 	CONFIG : in STD_LOGIC_VECTOR(31 downto 0) );
 END COMPONENT;
-signal U87_TS_OUT : std_logic_vector(63 downto 0);
-signal U87_TOT_LATCHED : std_logic_vector(31 downto 0);
-signal U87_D_READY : std_logic_vector(0 downto 0);
+signal U86_TS_OUT : std_logic_vector(63 downto 0);
+signal U86_TOT_LATCHED : std_logic_vector(31 downto 0);
+signal U86_D_READY : std_logic_vector(0 downto 0);
 
 COMPONENT SUBPAGE_ToT_And_TS
 PORT(
@@ -1365,6 +1364,16 @@ PORT(
     FAST_CLK_500_90: in std_logic_vector (0 downto 0); 
     GlobalClock: in std_logic_vector (0 downto 0); 
     async_clk: IN STD_LOGIC_VECTOR(0 DOWNTO 0)); 
+END COMPONENT;
+signal U87_tr_ts : std_logic_vector (63 downto 0); 
+signal U88_CONST : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
+signal U89_M_OUT : STD_LOGIC_VECTOR (63 DOWNTO 0);
+COMPONENT U89_UserHDL_MULTIPLEX_64
+PORT( 
+	IN_1 : in STD_LOGIC_VECTOR(63 downto 0);
+	IN_2 : in STD_LOGIC_VECTOR(63 downto 0);
+	M_SEL : in STD_LOGIC;
+	M_OUT : out STD_LOGIC_VECTOR(63 downto 0) );
 END COMPONENT;
 	signal BUS_PetirocCfg0_READ_ADDRESS : STD_LOGIC_VECTOR(-1 downto 0);
 	signal BUS_PetirocCfg0_READ_DATA : STD_LOGIC_VECTOR(31 downto 0);
@@ -2434,17 +2443,17 @@ REG_c_tot_RD <= EXT(U0_counts,32);
 PROCESS_REG_U3 : process(BUS_CLK,GlobalReset)
 begin
     if rising_edge(BUS_CLK(0))  then
-         U3_hold <= EXT(U49_TIME_LSB,32);
+         U3_hold <= EXT(U48_TIME_LSB,32);
     end if;
 end process;
-REG_run_time_lsb_RD <= EXT(U49_TIME_LSB,32);
+REG_run_time_lsb_RD <= EXT(U48_TIME_LSB,32);
 PROCESS_REG_U4 : process(BUS_CLK,GlobalReset)
 begin
     if rising_edge(BUS_CLK(0))  then
-         U4_hold <= EXT(U49_TIME_MSB,32);
+         U4_hold <= EXT(U48_TIME_MSB,32);
     end if;
 end process;
-REG_run_time_msb_RD <= EXT(U49_TIME_MSB,32);
+REG_run_time_msb_RD <= EXT(U48_TIME_MSB,32);
 
 U5:SW_GATE_AND_DELAY
 GENERIC MAP(
@@ -2465,12 +2474,12 @@ U9 : TimestampGenerator
 	nbits => 	64)
 PORT MAP(
 	TIMESTAMP => U9_TIMESTAMP,
-	T0 => U70_run_start(0),
+	T0 => U69_run_start(0),
 	CLK_READ => GlobalClock(0),
 	ClkCounter => GlobalClock(0) );
-variable_tr_ts <= U56_TS_OUT;
-variable_e16_adc <= U56_P_E_16;
-variable_e16_chtrig <= U56_P_H_16;
+variable_tr_ts <= U55_TS_OUT;
+variable_e16_adc <= U55_P_E_16;
+variable_e16_chtrig <= U55_P_H_16;
 U13_CONST <= conv_std_logic_vector(8,32);
 U14_out_0 <= REG_sw_trig_freq_WR(31 downto 0);
 U15 : PULSE_GENERATOR
@@ -2504,8 +2513,8 @@ begin
     end if;
 end process;
 REG_evt_ts_msb_RD <= EXT(U22_out,32);
-U21_out <= U76_tr16_ts(31 downto 0);
-U22_out <= U76_tr16_ts(63 downto 32);
+U21_out <= U89_M_OUT(31 downto 0);
+U22_out <= U89_M_OUT(63 downto 32);
 
 U24:SW_GATE_AND_DELAY
 GENERIC MAP(
@@ -2520,7 +2529,7 @@ PORT MAP(
 );
 U25_CONST <= 8;
 LEMO_0_1_A_IN <= U24_out;
-LEMO_0_1_B_IN <= U80_trg_busy;
+LEMO_0_1_B_IN <= U79_trg_busy;
 LEMO_0_1_DIRECTION <= U23_const_bin;
 variable_fifo_reset <= U28_out_0;
 U28_int <= INT_run_start_WR;
@@ -2528,10 +2537,10 @@ U28_out_0 <= REG_run_start_WR(0 downto 0);
 PROCESS_REG_U29 : process(BUS_CLK,GlobalReset)
 begin
     if rising_edge(BUS_CLK(0))  then
-         U29_hold <= EXT(U56_P_E_15,32);
+         U29_hold <= EXT(U55_P_E_15,32);
     end if;
 end process;
-REG_e15_RD <= EXT(U56_P_E_15,32);
+REG_e15_RD <= EXT(U55_P_E_15,32);
 U30 : FF_SR
     port map( 
         CE => "1",
@@ -2540,7 +2549,7 @@ U30 : FF_SR
         PORT_OUT => U30_out
     );
 variable_trg_start <= U41_OUT;
-variable_trg_dv <= U77_out;
+variable_trg_dv <= U76_out;
 U33_trg_dv <= variable_trg_dv;
 U34_trg_start <= variable_trg_start;
 variable_trg_busy <= U30_out;
@@ -2572,7 +2581,7 @@ U38_CONST <= 1;
 
 U39 : block
 begin
-U39_out <= U46_OR_TIME when U16_out_0 = "0" else U15_PULSE when U16_out_0 = "1"  else (others=>'0');
+U39_out <= U45_OR_TIME when U16_out_0 = "0" else U15_PULSE when U16_out_0 = "1"  else (others=>'0');
 
 end block;
 U40_out_0 <= REG_tr_en_WR(0 downto 0);
@@ -2582,16 +2591,15 @@ U43_CONST <= 1;
 PROCESS_REG_U44 : process(BUS_CLK,GlobalReset)
 begin
     if rising_edge(BUS_CLK(0))  then
-         U44_hold <= EXT(U45_CONST,32);
+         U44_hold <= EXT(U88_CONST,32);
     end if;
 end process;
-REG_fw_ver_RD <= EXT(U45_CONST,32);
-U45_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'(x"00010001"),32));
-U46_TRIG16 <= A_TRIG16;
-U46_OR_TIME <= A_OR_TIME;
+REG_fw_ver_RD <= EXT(U88_CONST,32);
+U45_TRIG16 <= A_TRIG16;
+U45_OR_TIME <= A_OR_TIME;
 TRIGGER_EXT_A_s <= U15_PULSE;
 
-U48 : PetirocSlowControl
+U47 : PetirocSlowControl
   Generic map(
 	CfgDefault => 	"0000000000000000000000000000000000000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000001100000000000000000000000000000000000000000000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000010000011100000110000010101110110011110000101011111111111111111010111111111001111111111111001001",
 	CfgMonitorDefault => 	"00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
@@ -2633,12 +2641,12 @@ PORT MAP(
 	REG_CFG19 => REG_PetirocCfg0_REG_CFG19_WR,
 	START_REG_CFG => REG_PetirocCfg0_START_REG_CFG_WR );
 
-U49:SUBPAGE_Timer64
+U48:SUBPAGE_Timer64
 PORT MAP(
 	Enable => U2_const_bin,
-	Reset => U70_run_start,
-	TIME_LSB => U49_TIME_LSB,
-	TIME_MSB => U49_TIME_MSB,
+	Reset => U69_run_start,
+	TIME_LSB => U48_TIME_LSB,
+	TIME_MSB => U48_TIME_MSB,
     GlobalReset => GlobalReset,
     CLK_ACQ=>CLK_ACQ ,
     BUS_CLK=>BUS_CLK ,
@@ -2657,25 +2665,25 @@ PORT MAP(
     GlobalClock=>GlobalClock ,
     async_clk => async_clk 
 );
-U50 : COUNTER_RISING
+U49 : COUNTER_RISING
     Generic map(bitSize => 32 )
     port map( 
         RESET => U8_run_start, 
         CE => "1",
         CLK => async_clk,
-        SIGIN => U79_trg_dv,
+        SIGIN => U78_trg_dv,
         ENABLE => "1",
-        COUNTER => U50_counts,
+        COUNTER => U49_counts,
         OVERFLOW => open
     );
-PROCESS_REG_U51 : process(BUS_CLK,GlobalReset)
+PROCESS_REG_U50 : process(BUS_CLK,GlobalReset)
 begin
     if rising_edge(BUS_CLK(0))  then
-         U51_hold <= EXT(U50_counts,32);
+         U50_hold <= EXT(U49_counts,32);
     end if;
 end process;
-REG_dv_tot_RD <= EXT(U50_counts,32);
-U53 : i2cmaster
+REG_dv_tot_RD <= EXT(U49_counts,32);
+U52 : i2cmaster
   Generic map(
 	CLK_FREQ => 	160000,
 	BAUD => 	100)
@@ -2687,15 +2695,15 @@ PORT MAP(
 	REG_MON_RD => REG_i2chv_MON_RD,
 	sys_clk => CLK_ACQ(0),
 	sys_rst => '0' );
-U54_trg_dv <= variable_trg_dv;
-variable_analogue_busy <= U56_BUSY;
-U56 : PetirocAnalogReadout
+U53_trg_dv <= variable_trg_dv;
+variable_analogue_busy <= U55_BUSY;
+U55 : PetirocAnalogReadout
   Generic map(
 	CLKDIV => 	40)
 PORT MAP(
 	TRIG => U41_OUT(0),
-	reject_data => U57_OUT(0),
-	BUSY => U56_BUSY(0),
+	reject_data => U56_OUT(0),
+	BUSY => U55_BUSY(0),
 	S_CHID => open,
 	S_ENERGY => open,
 	S_HIT => open,
@@ -2730,10 +2738,10 @@ PORT MAP(
 	P_HIT_13 => open,
 	P_ENERGY_14 => open,
 	P_HIT_14 => open,
-	P_ENERGY_15 => U56_P_E_15,
+	P_ENERGY_15 => U55_P_E_15,
 	P_HIT_15 => open,
-	P_ENERGY_16 => U56_P_E_16,
-	P_HIT_16 => U56_P_H_16(0),
+	P_ENERGY_16 => U55_P_E_16,
+	P_HIT_16 => U55_P_H_16(0),
 	P_ENERGY_17 => open,
 	P_HIT_17 => open,
 	P_ENERGY_18 => open,
@@ -2764,12 +2772,12 @@ PORT MAP(
 	P_HIT_30 => open,
 	P_ENERGY_31 => open,
 	P_HIT_31 => open,
-	P_DV => U56_P_DV(0),
+	P_DV => U55_P_DV(0),
 	M_ENERGY => open,
 	M_CLK => open,
 	M_DIN => open,
 	TS_IN => U9_TIMESTAMP,
-	TS_OUT => U56_TS_OUT,
+	TS_OUT => U55_TS_OUT,
 	TS0_IN => "00000000000000000000000000000000",
 	TS0_OUT => open,
 	ADC_IN => PETIROC_A_ADC_ENERGY,
@@ -2780,28 +2788,28 @@ PORT MAP(
 	raz_chn => A_RAZ_CHN_s(0),
 	clk => GlobalClock(0),
 	reset => '0' );
-U57_OUT <= U61_out_0 AND U58_out;
+U56_OUT <= U60_out_0 AND U57_out;
 
-U58:SW_GATE_AND_DELAY
+U57:SW_GATE_AND_DELAY
 GENERIC MAP(
     maxDelay => 1024)
 PORT MAP(
     RESET => GlobalReset,
     CLK => async_clk,
-    PORT_IN => U67_out,
-    DELAY => U59_out_0,
-    GATE => U60_CONST,
-    PORT_OUT => U58_out
+    PORT_IN => U66_out,
+    DELAY => U58_out_0,
+    GATE => U59_CONST,
+    PORT_OUT => U57_out
 );
-U59_out_0 <= conv_integer(REG_rej_delay_WR);
-U60_CONST <= 10;
-U61_out_0 <= REG_rej_en_WR(0 downto 0);
-U63 : MCRateMeter
+U58_out_0 <= conv_integer(REG_rej_delay_WR);
+U59_CONST <= 10;
+U60_out_0 <= REG_rej_en_WR(0 downto 0);
+U62 : MCRateMeter
   Generic map(
 	CHANNEL_COUNT => 	5,
 	CLK_FREQ => 	160000000)
 PORT MAP(
-	trigger => U54_trg_dv & U15_PULSE & U46_TRIG16 & U46_OR_TIME & U41_OUT,
+	trigger => U53_trg_dv & U15_PULSE & U45_TRIG16 & U45_OR_TIME & U41_OUT,
 	VETO => '0',
 	START => U42_run_start(0),
 	CLK => CLK_ACQ(0),
@@ -2809,64 +2817,64 @@ PORT MAP(
 	READ_ADDRESS => BUS_RateMeter_0_READ_ADDRESS,
 	READ_DATA => BUS_RateMeter_0_READ_DATA,
 	READ_DATAVALID => BUS_RateMeter_0_VLD );
-variable_tr_16 <= U46_TRIG16;
-PROCESS_REG_U65 : process(BUS_CLK,GlobalReset)
+variable_tr_16 <= U45_TRIG16;
+PROCESS_REG_U64 : process(BUS_CLK,GlobalReset)
 begin
-    if rising_edge(BUS_CLK(0)) and U87_D_READY = "1" then
-         U65_hold <= EXT(U87_TOT_LATCHED,32);
+    if rising_edge(BUS_CLK(0)) and U86_D_READY = "1" then
+         U64_hold <= EXT(U86_TOT_LATCHED,32);
     end if;
 end process;
-REG_tot16_RD <= EXT(U87_TOT_LATCHED,32) when U87_D_READY="1" else U65_hold;
-U66_trg_start <= variable_trg_start;
-U67 : EDGE_DETECTOR_FE
+REG_tot16_RD <= EXT(U86_TOT_LATCHED,32) when U86_D_READY="1" else U64_hold;
+U65_trg_start <= variable_trg_start;
+U66 : EDGE_DETECTOR_FE
     Generic map(bitSize => 1 )
     port map( 
         Reset => GlobalReset, 
         CE => "1",
         CLK => async_clk,
-        PORT_IN => U66_trg_start,
+        PORT_IN => U65_trg_start,
         PULSE_WIDTH => 1,
-        PORT_OUT => U67_out
+        PORT_OUT => U66_out
     );
-U68_tot_16 <= variable_tot_16;
-U69_out <= U68_tot_16(15 downto 0);
-U70_run_start <= variable_run_start;
-variable_tot_16 <= U87_TOT_LATCHED;
-U72_tr_16 <= variable_tr_16;
-variable_tr16_ts <= U87_TS_OUT;
-variable_rej_en <= U61_out_0;
-U75_rej_en <= variable_rej_en;
-U76_tr16_ts <= variable_tr16_ts;
+U67_tot_16 <= variable_tot_16;
+U68_out <= U67_tot_16(15 downto 0);
+U69_run_start <= variable_run_start;
+variable_tot_16 <= U86_TOT_LATCHED;
+U71_tr_16 <= variable_tr_16;
+variable_tr16_ts <= U86_TS_OUT;
+variable_rej_en <= U60_out_0;
+U74_rej_en <= variable_rej_en;
+U75_tr16_ts <= variable_tr16_ts;
 
-U77 : block
+U76 : block
 begin
-U77_out <= U56_P_DV when U75_rej_en = "0" else U82_rej_sig when U75_rej_en = "1"  else (others=>'0');
+U76_out <= U55_P_DV when U74_rej_en = "0" else U81_rej_sig when U74_rej_en = "1"  else (others=>'0');
 
 end block;
-variable_tot_dv <= U87_D_READY;
-U79_trg_dv <= variable_trg_dv;
-U80_trg_busy <= variable_trg_busy;
-variable_rej_sig <= U57_OUT;
-U82_rej_sig <= variable_rej_sig;
-variable_cp_busy <= U86_BUSY;
-variable_cp_full <= U86_FIFO_FULL;
-U86 : U86_custompacket
+variable_tot_dv <= U86_D_READY;
+U78_trg_dv <= variable_trg_dv;
+U79_trg_busy <= variable_trg_busy;
+variable_rej_sig <= U56_OUT;
+U81_rej_sig <= variable_rej_sig;
+variable_cp_busy <= U85_BUSY;
+variable_cp_full <= U85_FIFO_FULL;
+U85 : U85_custompacket
   Generic map(
 	memLength => 	1024,
 	wordWidth => 	32)
 PORT MAP(
-	IN_1 => U50_counts,
+	IN_1 => U49_counts,
 	IN_2 => U22_out,
 	IN_3 => U21_out,
 	IN_4 => U18_e16_adc,
-	IN_5 => U69_out,
-	TRIG => U79_trg_dv,
+	IN_5 => U68_out,
+	TRIG => U78_trg_dv,
 	CLK_WRITE => CLK_ACQ,
 	SYNC_TRIG => "0",
 	SYNC_RESET => "0",
 	SYNC_CLK => "0",
-	BUSY => U86_BUSY,
-	FIFO_FULL => U86_FIFO_FULL,
+	BUSY => U85_BUSY,
+	FIFO_FULL => U85_FIFO_FULL,
 	RUN => open,
 	RESET => "0",
 	CLK_READ => BUS_CLK,
@@ -2877,13 +2885,13 @@ PORT MAP(
 	READ_VALID_WORDS => REG_CP_0_READ_VALID_WORDS_RD,
 	CONFIG => REG_CP_0_CONFIG_WR );
 
-U87:SUBPAGE_ToT_And_TS
+U86:SUBPAGE_ToT_And_TS
 PORT MAP(
 	TS_IN => U9_TIMESTAMP,
-	IN_SIGNAL => U72_tr_16,
-	TS_OUT => U87_TS_OUT,
-	TOT_LATCHED => U87_TOT_LATCHED,
-	D_READY => U87_D_READY,
+	IN_SIGNAL => U71_tr_16,
+	TS_OUT => U86_TS_OUT,
+	TOT_LATCHED => U86_TOT_LATCHED,
+	D_READY => U86_D_READY,
     GlobalReset => GlobalReset,
     CLK_ACQ=>CLK_ACQ ,
     BUS_CLK=>BUS_CLK ,
@@ -2902,6 +2910,14 @@ PORT MAP(
     GlobalClock=>GlobalClock ,
     async_clk => async_clk 
 );
+U87_tr_ts <= variable_tr_ts;
+U88_CONST <= std_logic_vector(ieee.numeric_std.resize(ieee.numeric_std.unsigned'(x"00020001"),32));
+U89 : U89_UserHDL_MULTIPLEX_64
+PORT MAP(
+	IN_1 => U87_tr_ts,
+	IN_2 => U75_tr16_ts,
+	M_SEL => U74_rej_en(0),
+	M_OUT => U89_M_OUT );
 
 		 
 end Behavioral;

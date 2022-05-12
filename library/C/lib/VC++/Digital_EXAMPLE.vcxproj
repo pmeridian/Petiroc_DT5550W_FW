@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>303801f3-37fe-4f1b-9dcb-d46936ed40ef</ProjectGuid>
+    <ProjectGuid>b7e03914-cd2c-4b99-bdf9-0fd9ffea47e2</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Digital</RootNamespace>
 	<ProjectName>Digital</ProjectName>
