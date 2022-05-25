@@ -14,6 +14,7 @@ add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/FlashPageMemory.
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/FTDI_FIFOs.xci
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/FTDI_FIFO_AW.xci
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/TestBram.xci
+add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/subpage_MUX64.vhd
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/subpage_Timer64.vhd
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/subpage_ToT_And_TS.vhd
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/top_Digital.vhd
@@ -40,6 +41,8 @@ add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/edge_neg.vhd
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/edge_neg.vhd
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/edge_pos.vhd
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/edge_pos.vhd
+add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/ff_neg.vhd
+add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/ff_neg.vhd
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/ff_sr.vhd
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/ff_sr.vhd
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/FlashController.vhd
@@ -72,10 +75,10 @@ add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/spi_timing_modul
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/spi_timing_module.vhd
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/TimestampGenerator.vhd
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/TimestampGenerator.vhd
-add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/U85_custompacket.vhd
-add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/U85_custompacket.vhd
-add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/U89_UserHDL_MULTIPLEX_64.vhd
-add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/U89_UserHDL_MULTIPLEX_64.vhd
+add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/U0_UserHDL_MULTIPLEX_64.vhd
+add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/U0_UserHDL_MULTIPLEX_64.vhd
+add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/U79_custompacket.vhd
+add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/U79_custompacket.vhd
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/xlx_soft_gd.vhd
 add_files -force C:/Users/pccmsdaq02/Petiroc/Digital/HDL/pcores/xlx_soft_gd.vhd
 add_files -force -fileset constrs_1 C:/Users/pccmsdaq02/Petiroc/Digital/HDL/dt555w_constraints.xdc

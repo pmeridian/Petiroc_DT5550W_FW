@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date             : Thu May 12 12:47:01 2022
+| Date             : Wed May 25 20:02:54 2022
 | Host             : LAPTOP-O3N8AFU4 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_Digital_power_routed.rpt -pb top_Digital_power_summary_routed.pb -rpx top_Digital_power_routed.rpx
 | Design           : TOP_Digital
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.088        |
+| Total On-Chip Power (W)  | 1.096        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.970        |
+| Dynamic (W)              | 0.977        |
 | Device Static (W)        | 0.118        |
 | Total Off-Chip Power (W) | 0.010        |
 | Effective TJA (C/W)      | 1.9          |
@@ -53,21 +53,21 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.059 |       15 |       --- |             --- |
-| Slice Logic             |     0.026 |    18879 |       --- |             --- |
-|   LUT as Logic          |     0.022 |     6706 |    101400 |            6.61 |
-|   CARRY4                |     0.002 |      726 |     25350 |            2.86 |
-|   Register              |     0.002 |     9719 |    202800 |            4.79 |
+| Clocks                  |     0.060 |       15 |       --- |             --- |
+| Slice Logic             |     0.028 |    18983 |       --- |             --- |
+|   LUT as Logic          |     0.024 |     6754 |    101400 |            6.66 |
+|   CARRY4                |     0.002 |      733 |     25350 |            2.89 |
+|   Register              |     0.002 |     9762 |    202800 |            4.81 |
 |   F7/F8 Muxes           |    <0.001 |      137 |    101400 |            0.14 |
 |   LUT as Shift Register |    <0.001 |       16 |     35000 |            0.05 |
-|   Others                |    <0.001 |      915 |       --- |             --- |
+|   Others                |    <0.001 |      921 |       --- |             --- |
 |   BUFG                  |    <0.001 |        1 |        32 |            3.13 |
-| Signals                 |     0.035 |    15155 |       --- |             --- |
-| Block RAM               |     0.041 |        9 |       325 |            2.77 |
+| Signals                 |     0.036 |    15215 |       --- |             --- |
+| Block RAM               |     0.044 |      9.5 |       325 |            2.92 |
 | MMCM                    |     0.358 |        3 |         8 |           37.50 |
 | I/O                     |     0.451 |      207 |       400 |           51.75 |
 | Static Power            |     0.118 |          |           |                 |
-| Total                   |     1.088 |          |           |                 |
+| Total                   |     1.096 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,11 +77,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.226 |       0.182 |      0.044 |
-| Vccaux    |       1.800 |     0.268 |       0.250 |      0.018 |
+| Vccint    |       1.000 |     0.233 |       0.189 |      0.044 |
+| Vccaux    |       1.800 |     0.268 |       0.249 |      0.018 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.120 |       0.119 |      0.001 |
-| Vcco18    |       1.800 |     0.028 |       0.027 |      0.001 |
+| Vcco18    |       1.800 |     0.027 |       0.026 |      0.001 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
@@ -158,8 +158,8 @@ Table of Contents
 +------------------------------------------------------------------------------------------+-----------+
 | Name                                                                                     | Power (W) |
 +------------------------------------------------------------------------------------------+-----------+
-| TOP_Digital                                                                              |     0.970 |
-|   CDCE0                                                                                  |     0.003 |
+| TOP_Digital                                                                              |     0.977 |
+|   CDCE0                                                                                  |     0.002 |
 |     SPI_MASTER_CLKGEN                                                                    |    <0.001 |
 |       Inst_spi_timing_module                                                             |    <0.001 |
 |   FASTCLOCKGEN                                                                           |     0.122 |
@@ -174,7 +174,7 @@ Table of Contents
 |               ramloop[0].ram.r                                                           |     0.006 |
 |                 prim_noinit.ram                                                          |     0.006 |
 |   LEMO0_BUFF                                                                             |     0.002 |
-|   LEMO1_BUFF                                                                             |     0.004 |
+|   LEMO1_BUFF                                                                             |     0.003 |
 |   LEMO2_BUFF                                                                             |     0.000 |
 |   LEMO3_BUFF                                                                             |     0.000 |
 |   LEMO4_BUFF                                                                             |     0.000 |
@@ -190,31 +190,27 @@ Table of Contents
 |               prim_noinit.ram                                                            |     0.003 |
 |   U0                                                                                     |    <0.001 |
 |   U15                                                                                    |    <0.001 |
-|   U24                                                                                    |     0.005 |
+|   U28                                                                                    |    <0.001 |
+|   U33                                                                                    |     0.005 |
 |     xpm_memory_sdpram_inst                                                               |     0.004 |
 |       xpm_memory_base_inst                                                               |     0.004 |
-|   U30                                                                                    |    <0.001 |
-|   U36                                                                                    |     0.005 |
+|   U34                                                                                    |     0.005 |
 |     xpm_memory_sdpram_inst                                                               |     0.003 |
 |       xpm_memory_base_inst                                                               |     0.003 |
-|   U37                                                                                    |     0.005 |
-|     xpm_memory_sdpram_inst                                                               |     0.003 |
-|       xpm_memory_base_inst                                                               |     0.003 |
-|   U47                                                                                    |     0.013 |
-|   U48                                                                                    |     0.001 |
+|   U42                                                                                    |     0.013 |
+|   U43                                                                                    |     0.001 |
 |     U0                                                                                   |    <0.001 |
 |     U1                                                                                   |    <0.001 |
-|   U49                                                                                    |    <0.001 |
+|   U44                                                                                    |    <0.001 |
+|   U47                                                                                    |     0.002 |
+|     IICCORE                                                                              |     0.002 |
 |   U5                                                                                     |     0.005 |
 |     xpm_memory_sdpram_inst                                                               |     0.004 |
 |       xpm_memory_base_inst                                                               |     0.004 |
-|   U52                                                                                    |     0.002 |
-|     IICCORE                                                                              |     0.002 |
-|   U55                                                                                    |     0.005 |
-|   U57                                                                                    |     0.005 |
+|   U51                                                                                    |     0.004 |
 |     xpm_memory_sdpram_inst                                                               |     0.003 |
 |       xpm_memory_base_inst                                                               |     0.003 |
-|   U62                                                                                    |     0.014 |
+|   U56                                                                                    |     0.014 |
 |     CPS_GENERATE[0].SYNC_WORD_CPS                                                        |    <0.001 |
 |       single_array[0].xpm_cdc_single_inst                                                |    <0.001 |
 |       single_array[10].xpm_cdc_single_inst                                               |    <0.001 |
@@ -545,8 +541,8 @@ Table of Contents
 |       single_array[7].xpm_cdc_single_inst                                                |    <0.001 |
 |       single_array[8].xpm_cdc_single_inst                                                |    <0.001 |
 |       single_array[9].xpm_cdc_single_inst                                                |    <0.001 |
-|   U66                                                                                    |    <0.001 |
-|   U85                                                                                    |     0.008 |
+|   U60                                                                                    |     0.002 |
+|   U79                                                                                    |     0.008 |
 |     xpm_fifo_async_inst                                                                  |     0.005 |
 |       gnuram_async_fifo.xpm_fifo_base_inst                                               |     0.005 |
 |         gen_cdc_pntr.rd_pntr_cdc_inst                                                    |    <0.001 |
@@ -571,7 +567,7 @@ Table of Contents
 |           gen_rst_ic.wrst_wr_inst                                                        |    <0.001 |
 |             gen_pipe_bit[0].pipe_bit_inst                                                |    <0.001 |
 |             gen_pipe_bit[1].pipe_bit_inst                                                |    <0.001 |
-|   U86                                                                                    |     0.009 |
+|   U80                                                                                    |     0.009 |
 |     U0                                                                                   |    <0.001 |
 |     U1                                                                                   |     0.001 |
 |     U10                                                                                  |     0.005 |
@@ -582,12 +578,22 @@ Table of Contents
 |     U2                                                                                   |     0.001 |
 |     U4                                                                                   |    <0.001 |
 |     U9                                                                                   |    <0.001 |
-|   U89                                                                                    |     0.001 |
+|   U81                                                                                    |     0.006 |
+|   U83                                                                                    |     0.001 |
+|     U0                                                                                   |     0.001 |
+|   U89                                                                                    |    <0.001 |
 |   U9                                                                                     |     0.015 |
 |     big_counter.xpm_cdc_gray_inst_1                                                      |     0.007 |
 |     big_counter.xpm_cdc_gray_inst_2                                                      |     0.007 |
 |     xpm_cdc_async_rst_inst                                                               |    <0.001 |
-|   USBInterface                                                                           |     0.031 |
+|   U95                                                                                    |    <0.001 |
+|   U97                                                                                    |     0.005 |
+|     xpm_memory_sdpram_inst                                                               |     0.004 |
+|       xpm_memory_base_inst                                                               |     0.004 |
+|   U98                                                                                    |     0.005 |
+|     xpm_memory_sdpram_inst                                                               |     0.003 |
+|       xpm_memory_base_inst                                                               |     0.003 |
+|   USBInterface                                                                           |     0.032 |
 |     ADDRESS_FIFO                                                                         |     0.007 |
 |       U0                                                                                 |     0.007 |
 |         inst_fifo_gen                                                                    |     0.007 |
@@ -603,13 +609,13 @@ Table of Contents
 |                 gwas.gpf.wrpf                                                            |    <0.001 |
 |                 gwas.wsts                                                                |    <0.001 |
 |                 wpntr                                                                    |    <0.001 |
-|               gntv_or_sync_fifo.mem                                                      |     0.005 |
-|                 gbm.gbmg.gbmga.ngecc.bmg                                                 |     0.005 |
-|                   inst_blk_mem_gen                                                       |     0.005 |
-|                     gnbram.gnativebmg.native_blk_mem_gen                                 |     0.005 |
-|                       valid.cstr                                                         |     0.005 |
-|                         ramloop[0].ram.r                                                 |     0.005 |
-|                           prim_noinit.ram                                                |     0.005 |
+|               gntv_or_sync_fifo.mem                                                      |     0.006 |
+|                 gbm.gbmg.gbmga.ngecc.bmg                                                 |     0.006 |
+|                   inst_blk_mem_gen                                                       |     0.006 |
+|                     gnbram.gnativebmg.native_blk_mem_gen                                 |     0.006 |
+|                       valid.cstr                                                         |     0.006 |
+|                         ramloop[0].ram.r                                                 |     0.006 |
+|                           prim_noinit.ram                                                |     0.006 |
 |               rstblk                                                                     |    <0.001 |
 |                 ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.rst_rd_reg2_inst              |    <0.001 |
 |                 ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.xpm_cdc_single_inst_rrst_wr   |    <0.001 |
@@ -684,7 +690,7 @@ Table of Contents
 |         Inst_spi93lc56_16bit                                                             |     0.002 |
 |     xpm_cdc_single_inst                                                                  |    <0.001 |
 |   adcs                                                                                   |     0.292 |
-|     adc_interface1                                                                       |     0.163 |
+|     adc_interface1                                                                       |     0.164 |
 |       ADC_DESER1                                                                         |     0.140 |
 |       ADC_OUTFIFO1                                                                       |     0.007 |
 |         U0                                                                               |     0.007 |

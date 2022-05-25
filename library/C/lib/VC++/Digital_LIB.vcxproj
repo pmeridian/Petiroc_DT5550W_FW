@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>c3987600-4eea-4c13-849f-a48bbc434671</ProjectGuid>
+    <ProjectGuid>4054efc7-eeb4-415c-bd5b-1346c375a798</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Digital_LIB</RootNamespace>
     <ProjectName>Digital_LIB</ProjectName>

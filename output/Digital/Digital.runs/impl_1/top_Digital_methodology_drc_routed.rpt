@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Thu May 12 12:46:53 2022
+| Date         : Wed May 25 20:02:43 2022
 | Host         : LAPTOP-O3N8AFU4 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_Digital_methodology_drc_routed.rpt -pb top_Digital_methodology_drc_routed.pb -rpx top_Digital_methodology_drc_routed.rpx
 | Design       : TOP_Digital
@@ -89,7 +89,7 @@ Related violations: <none>
 
 TIMING-17#9 Warning
 Non-clocked sequential cell  
-The clock pin U30/PORT_OUT_reg[0]/C is not reached by a timing clock
+The clock pin U28/PORT_OUT_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#10 Warning

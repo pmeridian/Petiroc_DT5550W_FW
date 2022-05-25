@@ -33,6 +33,7 @@ set_property ip_output_repo c:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/D
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/ADC1.v
 read_vhdl -library xil_defaultlib {
+  C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/subpage_MUX64.vhd
   C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/subpage_Timer64.vhd
   C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/subpage_ToT_And_TS.vhd
   C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/top_Digital.vhd
@@ -47,6 +48,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/d_latch.vhd
   C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/edge_neg.vhd
   C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/edge_pos.vhd
+  C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/ff_neg.vhd
   C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/ff_sr.vhd
   C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/FlashController.vhd
   C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/flash_prog.vhd
@@ -63,8 +65,8 @@ read_vhdl -library xil_defaultlib {
   C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/spi93lc56_16bit.vhd
   C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/spi_timing_module.vhd
   C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/TimestampGenerator.vhd
-  C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/U85_custompacket.vhd
-  C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/U89_UserHDL_MULTIPLEX_64.vhd
+  C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/U0_UserHDL_MULTIPLEX_64.vhd
+  C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/U79_custompacket.vhd
   C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/imports/HDL/pcores/xlx_soft_gd.vhd
 }
 read_ip -quiet C:/Users/pccmsdaq02/Petiroc/Digital/output/Digital/Digital.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
